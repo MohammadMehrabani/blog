@@ -1,0 +1,44 @@
+version: '3.8'
+
+networks:
+  blog:
+
+services:
+  web:
+    build:
+      context: ./dockerfiles/nginx
+      dockerfile: nginx.dockerfile
+    ports:
+      - ${DOCKER_APP_PORT:-80}:80
+    volumes:
+      - ./:/var/www/html:delegated
+    depends_on:
+      - php
+      - mysql
+    networks:
+      - blog
+
+  php:
+    build:
+      context: ./dockerfiles/php
+      dockerfile: php.dockerfile
+    volumes:
+      - ./:/var/www/html:delegated
+    networks:
+      - blog
+
+  mysql:
+    image: mariadb:lts
+    restart: unless-stopped
+    tty: true
+    ports:
+      - ${DOCKER_DB_PORT:-3306}:3306
+    volumes:
+      - ./docker/mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - blog
