@@ -34,11 +34,19 @@ services:
     ports:
       - ${DOCKER_DB_PORT:-3306}:3306
     volumes:
-      - ./docker/mysql:/var/lib/mysql
+      - ./dockerfiles/mysql:/var/lib/mysql
     environment:
       MYSQL_DATABASE: ${DB_DATABASE}
       MYSQL_USER: ${DB_USERNAME}
       MYSQL_PASSWORD: ${DB_PASSWORD}
       MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - blog
+
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
     networks:
       - blog
