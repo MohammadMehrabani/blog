@@ -3,8 +3,11 @@
 namespace Src\SharedKernel\Repositories;
 
 use Illuminate\Contracts\Container\BindingResolutionException;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Container\Container as Application;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Src\SharedKernel\Contracts\EloquentBaseRepositoryContract;
 
 abstract class EloquentBaseRepository implements EloquentBaseRepositoryContract
@@ -53,5 +56,38 @@ abstract class EloquentBaseRepository implements EloquentBaseRepositoryContract
     public function count(array $where): int
     {
         return $this->model::query()->where($where)->count();
+    }
+
+    public function get(
+        array $where = [],
+        array $relations = [],
+        bool $paginate = false,
+        int $perPage = 15,
+        string $order = 'id',
+        string $sort = 'desc'
+    ): Collection|LengthAwarePaginator
+    {
+        $query = $this->model::query()->with($relations)->where($where);
+
+        $query->orderBy($order, $sort);
+
+        if ($paginate) {
+            return $query->paginate($perPage);
+        }
+
+        return $query->get();
+    }
+
+    public function findOrFail(array $where, array $relations = []): Model
+    {
+        $model = $this->model::query()->with($relations)->where($where)->first();
+
+        if (is_null($model)) {
+            throw (new ModelNotFoundException)->setModel(
+                get_class($this->model)
+            );
+        }
+
+        return $model;
     }
 }
