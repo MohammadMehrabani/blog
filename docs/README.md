@@ -81,10 +81,10 @@ curl --location 'http://127.0.0.1:8000/api/users/update-avatar' \
 ```
 
 ## OpenAPI / swagger documentation
-[Blog.swagger.yaml](Blog.swagger.yaml)
+[Blog.swagger.yaml](../Blog.swagger.yaml)
 
 ## postman documentation
 https://documenter.getpostman.com/view/36957369/2sB3WsPz9m
 
 ## postman collection
-[Blog.postman_collection.json](Blog.postman_collection.json)
+[Blog.postman_collection.json](../Blog.postman_collection.json)
