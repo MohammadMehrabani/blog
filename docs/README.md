@@ -29,6 +29,12 @@ docker compose exec php php artisan migrate
 docker compose exec php php artisan db:seed
 ```
 
+### 3. tests
+
+```bash
+docker compose exec php php artisan test
+```
+
 ## information for test
 
 You can quickly test the application using the pre-seeded `user` with `mobile = 09121111111` and `password = password`.
