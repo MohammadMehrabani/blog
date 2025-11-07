@@ -1,0 +1,1904 @@
+{
+	"info": {
+		"_postman_id": "f03510bb-46d2-4768-953b-7013c1f622cc",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36957369"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"mobile\": \"09129693541\",\n    \"password\": \"password\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/auth/login",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "successfully logged in",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"mobile\": \"09121111111\",\n    \"password\": \"password\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/auth/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:07:43 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvbG9naW4iLCJpYXQiOjE3NjI1MTAwNjMsImV4cCI6MTc2MjUxMzY2MywibmJmIjoxNzYyNTEwMDYzLCJqdGkiOiJsWEt2RDB2SjU1eVdpemdLIiwic3ViIjoiNCIsInBydiI6Ijk3NTAyMTA3N2ZjMTlhMjA4NWNkNTg0MTcxYTZlMGI4MDQxYWI2MzkifQ.P9QHxgbQ4mskOS3XNw39iGdXs3RAzx0mIJOZFRfhem8\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 3600\n    },\n    \"server_time\": \"2025-11-07T10:07:43.927619Z\"\n}"
+								},
+								{
+									"name": "mobile format is inavalid",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"mobile\": \"9121111111\",\n    \"password\": \"password\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/auth/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Unprocessable Content",
+									"code": 422,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:09:57 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"ValidationException\",\n        \"status\": 422,\n        \"message\": \"The provided data is invalid.\",\n        \"timestamp\": \"2025-11-07T10:09:57.430203Z\",\n        \"validation_errors\": [\n            {\n                \"field\": \"mobile\",\n                \"message\": \"The mobile field format is invalid.\"\n            }\n        ]\n    }\n}"
+								},
+								{
+									"name": "login failed",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"mobile\": \"09121111111\",\n    \"password\": \"assword\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/api/auth/login",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:12:13 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"AuthenticationException\",\n        \"status\": 401,\n        \"message\": \"Authentication required. Please provide valid credentials.\",\n        \"timestamp\": \"2025-11-07T10:12:13.944512Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "refresh token",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/auth/refresh",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get new token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/refresh",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:32:52 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"access_token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2F1dGgvcmVmcmVzaCIsImlhdCI6MTc2MjUxMTU0NCwiZXhwIjoxNzYyNTE1MTcyLCJuYmYiOjE3NjI1MTE1NzIsImp0aSI6IkVvdGdFSVZjN2NBT3BQQ2giLCJzdWIiOiI0IiwicHJ2IjoiOTc1MDIxMDc3ZmMxOWEyMDg1Y2Q1ODQxNzFhNmUwYjgwNDFhYjYzOSJ9.f9myJCvGrAhIS5uPOjiZctbVJImyKW8rQKeATe4X_SE\",\n        \"token_type\": \"bearer\",\n        \"expires_in\": 3600\n    },\n    \"server_time\": \"2025-11-07T10:32:52.699601Z\"\n}"
+								},
+								{
+									"name": "this token can no longer be used to obtain a new token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/refresh",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:29:35 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"Tymon\\\\JWTAuth\\\\Exceptions\\\\TokenBlacklistedException\",\n        \"status\": 500,\n        \"message\": \"The token has been blacklisted\",\n        \"timestamp\": \"2025-11-07T10:29:35.906989Z\"\n    }\n}"
+								},
+								{
+									"name": "expired old token validity for refresh token request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/refresh",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:47:10 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"Tymon\\\\JWTAuth\\\\Exceptions\\\\TokenExpiredException\",\n        \"status\": 500,\n        \"message\": \"Token has expired and can no longer be refreshed\",\n        \"timestamp\": \"2025-11-07T10:47:10.735257Z\"\n    }\n}"
+								},
+								{
+									"name": "invalid access_token",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/refresh",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"refresh"
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 17:59:50 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"Tymon\\\\JWTAuth\\\\Exceptions\\\\JWTException\",\n        \"status\": 500,\n        \"message\": \"Token could not be parsed from the request.\",\n        \"timestamp\": \"2025-11-07T17:59:50.852206Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "logout",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/auth/refresh",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"refresh"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "logout",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/logout",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:55:56 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": null,\n    \"server_time\": \"2025-11-07T10:55:56.868881Z\"\n}"
+								},
+								{
+									"name": "Unauthenticated error",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept",
+												"value": "application/json"
+											},
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/logout",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:56:57 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"AuthenticationException\",\n        \"status\": 401,\n        \"message\": \"Authentication required. Please provide valid credentials.\",\n        \"timestamp\": \"2025-11-07T10:56:57.293599Z\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "me",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/auth/me",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"me"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "get me",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/me",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"me"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:19:20 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"firstname\": \"Test\",\n        \"lastname\": \"User\",\n        \"avatar_path\": null,\n        \"mobile\": \"09121111111\",\n        \"mobile_verified_at\": \"2025-11-06T20:54:49.000000Z\",\n        \"total_post_views\": 28,\n        \"created_at\": \"2025-11-06T20:54:49.000000Z\",\n        \"updated_at\": \"2025-11-06T20:54:49.000000Z\"\n    },\n    \"server_time\": \"2025-11-07T10:19:20.577484Z\"\n}"
+								},
+								{
+									"name": "Unauthenticated error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{baseURL}}/api/auth/me",
+											"host": [
+												"{{baseURL}}"
+											],
+											"path": [
+												"api",
+												"auth",
+												"me"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": null,
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx/1.28.0"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.4.14"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 07 Nov 2025 10:20:13 GMT"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"error\": {\n        \"type\": \"AuthenticationException\",\n        \"status\": 401,\n        \"message\": \"Authentication required. Please provide valid credentials.\",\n        \"timestamp\": \"2025-11-07T10:20:13.497857Z\"\n    }\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "update user avatar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/home/mh/Desktop/_100058428_mediaitem100058424.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseURL}}/api/users/update-avatar",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users",
+								"update-avatar"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "update user avatar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/mh/Pictures/image_2025-03-21_16-38-41.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/update-avatar",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"update-avatar"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 11:22:51 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 4,\n        \"firstname\": \"Test\",\n        \"lastname\": \"User\",\n        \"avatar_path\": \"/storage/avatars/4/Zvsk9Vi1NfA7kZKcmw4yrNsA8fWJuQb4AvQYxfpj.png\",\n        \"mobile\": \"09121111111\",\n        \"mobile_verified_at\": \"2025-11-07 00:24:49\",\n        \"total_post_views\": 28,\n        \"created_at\": \"2025-11-06 20:54:49\",\n        \"updated_at\": \"2025-11-07 11:22:51\"\n    },\n    \"server_time\": \"2025-11-07T11:22:51.959292Z\"\n}"
+						},
+						{
+							"name": "Unauthenticated error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/mh/Pictures/image_2025-03-21_16-38-41.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/update-avatar",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"update-avatar"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 11:25:36 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"type\": \"AuthenticationException\",\n        \"status\": 401,\n        \"message\": \"Authentication required. Please provide valid credentials.\",\n        \"timestamp\": \"2025-11-07T11:25:36.401999Z\"\n    }\n}"
+						},
+						{
+							"name": "valiodation error when avatar file greater than 500 kilobytes",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/mh/Desktop/file_example_JPG_500kB.jpg"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/update-avatar",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"update-avatar"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 11:37:35 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"type\": \"ValidationException\",\n        \"status\": 422,\n        \"message\": \"The provided data is invalid.\",\n        \"timestamp\": \"2025-11-07T11:37:35.695497Z\",\n        \"validation_errors\": [\n            {\n                \"field\": \"avatar\",\n                \"message\": \"The avatar field must not be greater than 500 kilobytes.\"\n            }\n        ]\n    }\n}"
+						},
+						{
+							"name": "validation error when avatar file without mimes type valid",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "avatar",
+											"type": "file",
+											"src": "/home/mh/Desktop/قیمت-ایران-خودرو-مهر-ماه.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseURL}}/api/users/update-avatar",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"update-avatar"
+									]
+								}
+							},
+							"status": "Unprocessable Content",
+							"code": 422,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 11:55:57 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"type\": \"ValidationException\",\n        \"status\": 422,\n        \"message\": \"The provided data is invalid.\",\n        \"timestamp\": \"2025-11-07T11:55:57.509381Z\",\n        \"validation_errors\": [\n            {\n                \"field\": \"avatar\",\n                \"message\": \"The avatar field must be a file of type: jpeg, jpg, png.\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "list users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/users",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list users with order by total_post_views",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/users",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 17:51:35 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 27,\n                \"firstname\": \"Prof. Corbin Mohr\",\n                \"lastname\": \"Abernathy\",\n                \"avatar_path\": null,\n                \"mobile\": \"09125737780\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 60,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 9,\n                \"firstname\": \"Murphy Waelchi\",\n                \"lastname\": \"Aufderhar\",\n                \"avatar_path\": null,\n                \"mobile\": \"09166200041\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 48,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 32,\n                \"firstname\": \"Irma Olson\",\n                \"lastname\": \"Oberbrunner\",\n                \"avatar_path\": null,\n                \"mobile\": \"09123775960\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 38,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 15,\n                \"firstname\": \"Miss Makenzie Hudson\",\n                \"lastname\": \"Ebert\",\n                \"avatar_path\": null,\n                \"mobile\": \"09823111237\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 36,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 1,\n                \"firstname\": \"Test\",\n                \"lastname\": \"User\",\n                \"avatar_path\": null,\n                \"mobile\": \"09121111112\",\n                \"mobile_verified_at\": \"2025-11-07 00:22:22\",\n                \"total_post_views\": 35,\n                \"created_at\": \"2025-11-06 20:52:23\",\n                \"updated_at\": \"2025-11-06 20:52:23\"\n            },\n            {\n                \"id\": 29,\n                \"firstname\": \"Cory Bartell\",\n                \"lastname\": \"Rau\",\n                \"avatar_path\": null,\n                \"mobile\": \"09122008937\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 35,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 3,\n                \"firstname\": \"Test\",\n                \"lastname\": \"User\",\n                \"avatar_path\": null,\n                \"mobile\": \"09121111113\",\n                \"mobile_verified_at\": \"2025-11-07 00:23:33\",\n                \"total_post_views\": 34,\n                \"created_at\": \"2025-11-06 20:53:33\",\n                \"updated_at\": \"2025-11-06 20:53:33\"\n            },\n            {\n                \"id\": 8,\n                \"firstname\": \"Marion Muller V\",\n                \"lastname\": \"Friesen\",\n                \"avatar_path\": null,\n                \"mobile\": \"09483486654\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 34,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 21,\n                \"firstname\": \"Cleo Murphy\",\n                \"lastname\": \"Moen\",\n                \"avatar_path\": null,\n                \"mobile\": \"09274781260\",\n                \"mobile_verified_at\": \"2025-11-07 17:10:10\",\n                \"total_post_views\": 32,\n                \"created_at\": \"2025-11-07 13:40:10\",\n                \"updated_at\": \"2025-11-07 13:40:10\"\n            },\n            {\n                \"id\": 22,\n                \"firstname\": \"Sonya Wehner\",\n                \"lastname\": \"Schulist\",\n                \"avatar_path\": null,\n                \"mobile\": \"09448641225\",\n                \"mobile_verified_at\": \"2025-11-07 17:10:10\",\n                \"total_post_views\": 31,\n                \"created_at\": \"2025-11-07 13:40:10\",\n                \"updated_at\": \"2025-11-07 13:40:10\"\n            },\n            {\n                \"id\": 31,\n                \"firstname\": \"Bettie Labadie V\",\n                \"lastname\": \"Wuckert\",\n                \"avatar_path\": null,\n                \"mobile\": \"09124809920\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 31,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 13,\n                \"firstname\": \"Mr. Nathaniel Runolfsson II\",\n                \"lastname\": \"Mann\",\n                \"avatar_path\": null,\n                \"mobile\": \"09411856538\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 30,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 30,\n                \"firstname\": \"Valentin Howell\",\n                \"lastname\": \"Maggio\",\n                \"avatar_path\": null,\n                \"mobile\": \"09126734406\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 30,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 4,\n                \"firstname\": \"Test\",\n                \"lastname\": \"User\",\n                \"avatar_path\": \"/storage/avatars/4/gjFSG2fVQGtNYittJyqKi03M5T430EOB7C7YBofB.jpg\",\n                \"mobile\": \"09121111111\",\n                \"mobile_verified_at\": \"2025-11-07 00:24:49\",\n                \"total_post_views\": 28,\n                \"created_at\": \"2025-11-06 20:54:49\",\n                \"updated_at\": \"2025-11-07 11:57:25\"\n            },\n            {\n                \"id\": 26,\n                \"firstname\": \"Marshall Rohan\",\n                \"lastname\": \"Robel\",\n                \"avatar_path\": null,\n                \"mobile\": \"09120166859\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 28,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"from\": 1,\n        \"last_page\": 3,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/users?page=3\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=2\",\n                \"label\": \"2\",\n                \"page\": 2,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=3\",\n                \"label\": \"3\",\n                \"page\": 3,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"page\": 2,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/users?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/users\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 15,\n        \"total\": 33\n    },\n    \"server_time\": \"2025-11-07T17:51:35.053201Z\"\n}"
+						},
+						{
+							"name": "list users with custom per_page",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/users?per_page=10",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "per_page",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 17:52:46 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 27,\n                \"firstname\": \"Prof. Corbin Mohr\",\n                \"lastname\": \"Abernathy\",\n                \"avatar_path\": null,\n                \"mobile\": \"09125737780\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 60,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 9,\n                \"firstname\": \"Murphy Waelchi\",\n                \"lastname\": \"Aufderhar\",\n                \"avatar_path\": null,\n                \"mobile\": \"09166200041\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 48,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 32,\n                \"firstname\": \"Irma Olson\",\n                \"lastname\": \"Oberbrunner\",\n                \"avatar_path\": null,\n                \"mobile\": \"09123775960\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 38,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 15,\n                \"firstname\": \"Miss Makenzie Hudson\",\n                \"lastname\": \"Ebert\",\n                \"avatar_path\": null,\n                \"mobile\": \"09823111237\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 36,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 1,\n                \"firstname\": \"Test\",\n                \"lastname\": \"User\",\n                \"avatar_path\": null,\n                \"mobile\": \"09121111112\",\n                \"mobile_verified_at\": \"2025-11-07 00:22:22\",\n                \"total_post_views\": 35,\n                \"created_at\": \"2025-11-06 20:52:23\",\n                \"updated_at\": \"2025-11-06 20:52:23\"\n            },\n            {\n                \"id\": 29,\n                \"firstname\": \"Cory Bartell\",\n                \"lastname\": \"Rau\",\n                \"avatar_path\": null,\n                \"mobile\": \"09122008937\",\n                \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                \"total_post_views\": 35,\n                \"created_at\": \"2025-11-07 13:41:46\",\n                \"updated_at\": \"2025-11-07 13:41:46\"\n            },\n            {\n                \"id\": 3,\n                \"firstname\": \"Test\",\n                \"lastname\": \"User\",\n                \"avatar_path\": null,\n                \"mobile\": \"09121111113\",\n                \"mobile_verified_at\": \"2025-11-07 00:23:33\",\n                \"total_post_views\": 34,\n                \"created_at\": \"2025-11-06 20:53:33\",\n                \"updated_at\": \"2025-11-06 20:53:33\"\n            },\n            {\n                \"id\": 8,\n                \"firstname\": \"Marion Muller V\",\n                \"lastname\": \"Friesen\",\n                \"avatar_path\": null,\n                \"mobile\": \"09483486654\",\n                \"mobile_verified_at\": \"2025-11-07 17:07:16\",\n                \"total_post_views\": 34,\n                \"created_at\": \"2025-11-07 13:37:16\",\n                \"updated_at\": \"2025-11-07 13:37:16\"\n            },\n            {\n                \"id\": 21,\n                \"firstname\": \"Cleo Murphy\",\n                \"lastname\": \"Moen\",\n                \"avatar_path\": null,\n                \"mobile\": \"09274781260\",\n                \"mobile_verified_at\": \"2025-11-07 17:10:10\",\n                \"total_post_views\": 32,\n                \"created_at\": \"2025-11-07 13:40:10\",\n                \"updated_at\": \"2025-11-07 13:40:10\"\n            },\n            {\n                \"id\": 22,\n                \"firstname\": \"Sonya Wehner\",\n                \"lastname\": \"Schulist\",\n                \"avatar_path\": null,\n                \"mobile\": \"09448641225\",\n                \"mobile_verified_at\": \"2025-11-07 17:10:10\",\n                \"total_post_views\": 31,\n                \"created_at\": \"2025-11-07 13:40:10\",\n                \"updated_at\": \"2025-11-07 13:40:10\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/users?page=1\",\n        \"from\": 1,\n        \"last_page\": 4,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/users?page=4\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=2\",\n                \"label\": \"2\",\n                \"page\": 2,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=3\",\n                \"label\": \"3\",\n                \"page\": 3,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=4\",\n                \"label\": \"4\",\n                \"page\": 4,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/users?page=2\",\n                \"label\": \"Next &raquo;\",\n                \"page\": 2,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": \"http://127.0.0.1:8000/api/users?page=2\",\n        \"path\": \"http://127.0.0.1:8000/api/users\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 33\n    },\n    \"server_time\": \"2025-11-07T17:52:46.462805Z\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "list posts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/posts",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "list posts",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/posts",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 13:59:43 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 300,\n                \"title\": \"Dolores et.\",\n                \"body\": \"In sint voluptatem officiis ut numquam perspiciatis quo. Dignissimos porro ut consequatur dolor officia omnis aliquid. Nihil fugit nam quia perferendis odit quia. Quos voluptas ducimus sint. Doloremque consequatur numquam aliquid autem doloremque quasi consequatur ut. Quis corrupti distinctio perspiciatis enim asperiores. Nulla hic ut totam eos iusto possimus quia.\",\n                \"views\": 3,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 299,\n                \"title\": \"Aut a fuga.\",\n                \"body\": \"Et omnis laboriosam omnis eum. Et consequatur ex culpa omnis. Id quibusdam et recusandae est eius et quo est. Rerum odio illo et nemo ipsam officiis sed. Aut ut qui repudiandae dolor exercitationem.\",\n                \"views\": 9,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 298,\n                \"title\": \"Blanditiis consequatur.\",\n                \"body\": \"Quaerat itaque et aut ipsam ut et velit. Tempora qui aut temporibus ut. Est quisquam quis omnis magnam laborum rerum. Qui aut dolor ipsum ut et et. Qui itaque ipsa rerum accusantium dolorem. Exercitationem nobis ut est dolorem corporis dolor exercitationem. Quas harum veniam culpa molestiae officia optio in.\",\n                \"views\": 8,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 297,\n                \"title\": \"Consequatur quo minima.\",\n                \"body\": \"Quia velit molestias eligendi odit eius. Minima quae ut velit aliquam necessitatibus explicabo. Deserunt eius occaecati non distinctio tempore exercitationem. Sunt quis non fugiat omnis. Esse ut ipsam vero aut ut ut deleniti accusantium. Ducimus sed voluptas labore quod repellat.\",\n                \"views\": 4,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 296,\n                \"title\": \"Est odit assumenda.\",\n                \"body\": \"Quia tempora id fugiat et magni porro qui. Nihil aliquid sed voluptates laudantium consequatur aperiam. Exercitationem fuga explicabo qui qui ex. Voluptatum aliquid aliquid sit placeat et quia. Qui consectetur autem consectetur rerum.\",\n                \"views\": 22,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 295,\n                \"title\": \"Error dolor eius.\",\n                \"body\": \"Ullam doloribus repudiandae rerum quis itaque dolores cumque deserunt. Velit commodi necessitatibus aut fuga. Quidem voluptas ad et. Cum delectus ratione blanditiis delectus rerum doloremque minus. Quidem error iure voluptate eos qui amet enim. Est sit quos et qui sed quisquam. Suscipit voluptatum animi dolorum qui enim.\",\n                \"views\": 40,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 294,\n                \"title\": \"Odio qui aliquid.\",\n                \"body\": \"Libero minus aut et nisi aut ex. Deserunt cupiditate accusamus ut est totam. Et repellat dolore quam a dolorem dolorem ex. Et et voluptas nostrum et. Est possimus aut quia omnis quam earum. Ut quisquam totam vel saepe. Unde autem rerum est fugiat pariatur natus quos.\",\n                \"views\": 35,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 293,\n                \"title\": \"Perspiciatis quisquam.\",\n                \"body\": \"Amet eos vel sunt reiciendis totam quae. Et sint laudantium id illo. Odio voluptatem nihil cumque iste. Sunt et nulla tenetur totam sint animi aut.\",\n                \"views\": 21,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 292,\n                \"title\": \"Quisquam nostrum labore.\",\n                \"body\": \"Quo esse exercitationem accusantium labore rem. Vero fuga consectetur exercitationem ipsam aliquid quia blanditiis. Pariatur suscipit nostrum illo consequatur tenetur eum earum impedit. Sunt inventore dolores voluptates sed quae fugit velit. Sunt perferendis amet itaque quis dolore beatae. Quis quia earum maxime. Quod aut consequuntur est dolor.\",\n                \"views\": 16,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 291,\n                \"title\": \"Quia sit.\",\n                \"body\": \"Dolore autem fugit ipsum consequatur autem natus. Magnam temporibus vel et. Iste magnam porro in. Porro omnis quia provident eos doloribus unde.\",\n                \"views\": 31,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 46,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 13:41:46\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            }\n        ],\n        \"first_page_url\": \"http://localhost:8000/api/posts?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://localhost:8000/api/posts?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://localhost:8000/api/posts?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://localhost:8000/api/posts\",\n        \"per_page\": 15,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 10\n    },\n    \"server_time\": \"2025-11-07T13:59:43.922647Z\"\n}"
+						},
+						{
+							"name": "list posts with custom per_page",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/posts?per_page=10",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									],
+									"query": [
+										{
+											"key": "per_page",
+											"value": "10"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 17:55:58 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"current_page\": 1,\n        \"data\": [\n            {\n                \"id\": 300,\n                \"title\": \"Dolores et.\",\n                \"body\": \"In sint voluptatem officiis ut numquam perspiciatis quo. Dignissimos porro ut consequatur dolor officia omnis aliquid. Nihil fugit nam quia perferendis odit quia. Quos voluptas ducimus sint. Doloremque consequatur numquam aliquid autem doloremque quasi consequatur ut. Quis corrupti distinctio perspiciatis enim asperiores. Nulla hic ut totam eos iusto possimus quia.\",\n                \"views\": 3,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 299,\n                \"title\": \"Aut a fuga.\",\n                \"body\": \"Et omnis laboriosam omnis eum. Et consequatur ex culpa omnis. Id quibusdam et recusandae est eius et quo est. Rerum odio illo et nemo ipsam officiis sed. Aut ut qui repudiandae dolor exercitationem.\",\n                \"views\": 9,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 298,\n                \"title\": \"Blanditiis consequatur.\",\n                \"body\": \"Quaerat itaque et aut ipsam ut et velit. Tempora qui aut temporibus ut. Est quisquam quis omnis magnam laborum rerum. Qui aut dolor ipsum ut et et. Qui itaque ipsa rerum accusantium dolorem. Exercitationem nobis ut est dolorem corporis dolor exercitationem. Quas harum veniam culpa molestiae officia optio in.\",\n                \"views\": 8,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 297,\n                \"title\": \"Consequatur quo minima.\",\n                \"body\": \"Quia velit molestias eligendi odit eius. Minima quae ut velit aliquam necessitatibus explicabo. Deserunt eius occaecati non distinctio tempore exercitationem. Sunt quis non fugiat omnis. Esse ut ipsam vero aut ut ut deleniti accusantium. Ducimus sed voluptas labore quod repellat.\",\n                \"views\": 4,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 296,\n                \"title\": \"Est odit assumenda.\",\n                \"body\": \"Quia tempora id fugiat et magni porro qui. Nihil aliquid sed voluptates laudantium consequatur aperiam. Exercitationem fuga explicabo qui qui ex. Voluptatum aliquid aliquid sit placeat et quia. Qui consectetur autem consectetur rerum.\",\n                \"views\": 22,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 295,\n                \"title\": \"Error dolor eius.\",\n                \"body\": \"Ullam doloribus repudiandae rerum quis itaque dolores cumque deserunt. Velit commodi necessitatibus aut fuga. Quidem voluptas ad et. Cum delectus ratione blanditiis delectus rerum doloremque minus. Quidem error iure voluptate eos qui amet enim. Est sit quos et qui sed quisquam. Suscipit voluptatum animi dolorum qui enim.\",\n                \"views\": 40,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 294,\n                \"title\": \"Odio qui aliquid.\",\n                \"body\": \"Libero minus aut et nisi aut ex. Deserunt cupiditate accusamus ut est totam. Et repellat dolore quam a dolorem dolorem ex. Et et voluptas nostrum et. Est possimus aut quia omnis quam earum. Ut quisquam totam vel saepe. Unde autem rerum est fugiat pariatur natus quos.\",\n                \"views\": 35,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 293,\n                \"title\": \"Perspiciatis quisquam.\",\n                \"body\": \"Amet eos vel sunt reiciendis totam quae. Et sint laudantium id illo. Odio voluptatem nihil cumque iste. Sunt et nulla tenetur totam sint animi aut.\",\n                \"views\": 21,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 292,\n                \"title\": \"Quisquam nostrum labore.\",\n                \"body\": \"Quo esse exercitationem accusantium labore rem. Vero fuga consectetur exercitationem ipsam aliquid quia blanditiis. Pariatur suscipit nostrum illo consequatur tenetur eum earum impedit. Sunt inventore dolores voluptates sed quae fugit velit. Sunt perferendis amet itaque quis dolore beatae. Quis quia earum maxime. Quod aut consequuntur est dolor.\",\n                \"views\": 16,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 13:41:47\"\n            },\n            {\n                \"id\": 291,\n                \"title\": \"Quia sit.\",\n                \"body\": \"Dolore autem fugit ipsum consequatur autem natus. Magnam temporibus vel et. Iste magnam porro in. Porro omnis quia provident eos doloribus unde.\",\n                \"views\": 3,\n                \"user_id\": 35,\n                \"user\": {\n                    \"id\": 35,\n                    \"firstname\": \"Harvey Hoppe\",\n                    \"lastname\": \"Keebler\",\n                    \"avatar_path\": null,\n                    \"mobile\": \"09129693541\",\n                    \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n                    \"total_post_views\": 3,\n                    \"created_at\": \"2025-11-07 13:41:46\",\n                    \"updated_at\": \"2025-11-07 17:54:28\"\n                },\n                \"created_at\": \"2025-11-07 13:41:47\",\n                \"updated_at\": \"2025-11-07 17:54:28\"\n            }\n        ],\n        \"first_page_url\": \"http://127.0.0.1:8000/api/posts?page=1\",\n        \"from\": 1,\n        \"last_page\": 1,\n        \"last_page_url\": \"http://127.0.0.1:8000/api/posts?page=1\",\n        \"links\": [\n            {\n                \"url\": null,\n                \"label\": \"&laquo; Previous\",\n                \"page\": null,\n                \"active\": false\n            },\n            {\n                \"url\": \"http://127.0.0.1:8000/api/posts?page=1\",\n                \"label\": \"1\",\n                \"page\": 1,\n                \"active\": true\n            },\n            {\n                \"url\": null,\n                \"label\": \"Next &raquo;\",\n                \"page\": null,\n                \"active\": false\n            }\n        ],\n        \"next_page_url\": null,\n        \"path\": \"http://127.0.0.1:8000/api/posts\",\n        \"per_page\": 10,\n        \"prev_page_url\": null,\n        \"to\": 10,\n        \"total\": 10\n    },\n    \"server_time\": \"2025-11-07T17:55:58.599581Z\"\n}"
+						},
+						{
+							"name": "Unauthenticated error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/posts",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"posts"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 17:57:28 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"type\": \"AuthenticationException\",\n        \"status\": 401,\n        \"message\": \"Authentication required. Please provide valid credentials.\",\n        \"timestamp\": \"2025-11-07T17:57:28.461045Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "read post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/posts/291",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"291"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "read post",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/posts/291",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"291"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 16:38:54 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 291,\n        \"title\": \"Quia sit.\",\n        \"body\": \"Dolore autem fugit ipsum consequatur autem natus. Magnam temporibus vel et. Iste magnam porro in. Porro omnis quia provident eos doloribus unde.\",\n        \"views\": 31,\n        \"user_id\": 35,\n        \"user\": {\n            \"id\": 35,\n            \"firstname\": \"Harvey Hoppe\",\n            \"lastname\": \"Keebler\",\n            \"avatar_path\": null,\n            \"mobile\": \"09129693541\",\n            \"mobile_verified_at\": \"2025-11-07 17:11:46\",\n            \"total_post_views\": 46,\n            \"created_at\": \"2025-11-07 13:41:46\",\n            \"updated_at\": \"2025-11-07 13:41:46\"\n        },\n        \"created_at\": \"2025-11-07 13:41:47\",\n        \"updated_at\": \"2025-11-07 13:41:47\"\n    },\n    \"server_time\": \"2025-11-07T16:38:54.185096Z\"\n}"
+						},
+						{
+							"name": "Unauthenticated error",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/posts/291",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"291"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 16:39:21 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"type\": \"AuthenticationException\",\n        \"status\": 401,\n        \"message\": \"Authentication required. Please provide valid credentials.\",\n        \"timestamp\": \"2025-11-07T16:39:21.686058Z\"\n    }\n}"
+						},
+						{
+							"name": "post not found",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseURL}}/api/posts/2991",
+									"host": [
+										"{{baseURL}}"
+									],
+									"path": [
+										"api",
+										"posts",
+										"2991"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": null,
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.28.0"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.4.14"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 07 Nov 2025 18:09:31 GMT"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": {\n        \"type\": \"NotFoundHttpException\",\n        \"status\": 404,\n        \"message\": \"The requested endpoint '/api/posts/2991' was not found.\",\n        \"timestamp\": \"2025-11-07T18:09:31.005399Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
