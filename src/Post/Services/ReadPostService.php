@@ -3,6 +3,8 @@
 namespace Src\Post\Services;
 
 use Illuminate\Support\Facades\Cache;
+use Illuminate\Contracts\Cache\LockTimeoutException;
+use Illuminate\Support\Facades\DB;
 use Src\Post\Contracts\PostRepositoryContract;
 use Src\Post\DTOs\ReadPostDTO;
 use Src\SharedKernel\DTOs\Post\PostDTO;
@@ -26,16 +28,27 @@ class ReadPostService
             );
         });
 
-        $cacheKey = 'post_viewed_' . $post->id . '_' . sha1(request()->ip());
+        try {
+            Cache::lock('post-view:'.$post->id, 3)
+                ->block(2, function () use ($post) {
 
-        if (! Cache::has($cacheKey)) {
+                $cacheKey = 'post_viewed_' . $post->id . '_' . sha1(request()->ip());
 
-            $post->increment('views');
-            $post->user->increment('total_post_views');
+                if (! Cache::has($cacheKey)) {
 
-            Cache::put($cacheKey, true, 60 * 24); // Cache for 1d
+                    DB::transaction(function () use ($post) {
+                        $post->increment('views');
+                        $post->user->increment('total_post_views');
+                    });
+
+                    Cache::put($cacheKey, true, 60 * 24); // Cache for 1d
+                }
+            });
+
+        } catch (LockTimeoutException|\Exception $e) {
+            // skip or Log
         }
 
-       return PostDTO::fromArray($post->toArray());
+        return PostDTO::fromArray($post->toArray());
     }
 }
